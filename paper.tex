@@ -1,0 +1,250 @@
+\documentclass{article}
+
+% Listings
+\usepackage{listings}
+\usepackage{color}
+\usepackage{upquote} % preserve backticks
+
+% Fonts
+%\usepackage{palatino}
+\usepackage{inconsolata}
+\usepackage[T1]{fontenc}
+
+% Margin
+\usepackage[margin=0.5in]{geometry}
+
+% Images
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+
+% Colors
+\definecolor{comment}{rgb}{0.31,0.31,0.31}
+\definecolor{codegray}{rgb}{0.19,0.19,0.19}
+\definecolor{string}{rgb}{0.56,0.66,0.35}
+\definecolor{backcolor}{rgb}{0.96,0.96,0.96}
+\definecolor{keyword}{rgb}{0.67,0.25,0.25}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolor},
+    commentstyle=\color{comment},
+    keywordstyle=\color{keyword},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{string},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=t,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+\lstMakeShortInline[columns=fixed]|
+
+
+
+\title{Homework 2 - System Monitoring and VM Networking}
+\author{Jared Klingenberger}
+\date{February 27, 2016}
+
+\begin{document}
+
+\maketitle
+
+\lstlistoflistings
+
+\section{Kessler Paper}
+
+\subsection{ARP and Types of Addressing}
+
+The Address Resolution Protocol (ARP) is a method for determining the MAC
+address correlated with an IP address it needs.
+
+A machine address differs from a network address in that it is used on a lower
+logical layer of the network stack. MAC addresses are used to refer to a
+specific interface on a specific machine, whereas a network address like an IP
+address is used for the more general concept of finding and addressing
+machines between different networks.
+
+\subsection{DHCP}
+
+The Dynamic Host Configuration Protocol (DHCP) was created to provide a way
+to assign IP addresses to host on a network in an automated fashion. This is
+useful for two reasons:
+
+\begin{itemize}
+    \item Users don't have to manually choose an IP address.
+    \item Administrators don't have to keep IP addresses reserved for longer
+          than necessary.
+\end{itemize}
+
+To make things even simpler, DHCP is useful for networks that change Internet
+Service Providers and subsequently changing their IP address. Without DHCP,
+admins would need to reassign IP addresses on all their machines in this
+scenario.
+
+At a high level, DHCP works by the following steps:
+
+\begin{enumerate}
+    \item Send a broadcast message asking for an available DHCP server.
+    \item Receive responses from candidate DHCP server(s).
+    \item Choose a DHCP server and ask it for an IP address.
+    \item DHCP server responds with an IP address that is good until end of
+          lease.
+    \item When the lease ends, ask for a renewal.
+    \item Gracefully end the DHCP lease.
+\end{enumerate}
+
+\section{System Monitoring}
+
+I created the script discussed below and named it |hw2-Q2.sh|. Then, in order
+for cron to use it, I issued a |`sudo crontab -e`| to edit the crontab. Then,
+I placed the following line to get the program to run once a day at 5am:
+
+\begin{lstlisting}
+0 5  *   *   *     cd /home/jared/Documents/code/udpecho; ./hw2-Q2.sh > /tmp/cron-hw2-$(date +\%F).log 2>&1
+\end{lstlisting}
+
+\subsection{Config file}
+
+The config file in Listing \ref{code:conf} is read by the monitoring script in
+Listing \ref{code:q2}. To make things simple, the config file is simply
+|source|d by the script as if it were a bash file. Thus, the format for
+setting variables is the same as one would do in any bash script.
+
+\subsubsection{Variables}
+
+\begin{itemize}
+    \item |disk_max| (percent) - disk usage threshold.
+    \item |bw_max| (kbits/s) - total bandwidth usage threshold per interface.
+\end{itemize}
+
+\subsection{Disk Usage}
+
+This part of the script simply calls the UNIX program |du| and picks out the
+disk usage info for the root filesystem. If the percentage threshold specified
+in the config file is exceeded, the script will calculate and print the disk
+usage by each user's folder in the |/home| directory. Values are reported by
+percentage.
+
+\subsection{Authentication Failure Monitoring}
+
+Here, I decided to go a different route than parsing through
+|/var/log/auth.log|. My motivation for doing this is that there seems to be no
+standard searchable message for different authentication failures. For
+example, failing to authenticate to the root user when using |su| results in
+this log message:
+
+\begin{lstlisting}
+Feb 27 21:42:56 hotdog su[4642]: pam_unix(su:auth): authentication failure; logname=jared uid=1000 euid=0 tty=/dev/pts/10 ruser=jared rho
+st=  user=root
+Feb 27 21:42:58 hotdog su[4642]: pam_authenticate: Authentication failure
+Feb 27 21:42:58 hotdog su[4642]: FAILED su for root by jared
+Feb 27 21:42:58 hotdog su[4642]: - /dev/pts/10 jared:root
+\end{lstlisting}
+
+While failing to authenticate using |sudo| results in a different message:
+
+\begin{lstlisting}
+Feb 28 01:50:40 hotdog sudo:    jared : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/jared/Documents/code/udpecho ; USER=root ; COMMAND=/bin/echo hi
+\end{lstlisting}
+
+So, I chose to install the program |auditd| and use one of its utility
+programs |aureport| to get more accurate authentication statistics. This
+program is available in the Ubuntu repositories. Some of its better features
+that I made use of were its ability to report just the authentication failures
+and its ability to filter only events within particular time ranges. In this
+case, the script outputs the number of failures over the past 24 hours.
+
+\subsection{Bandwidth Measurement}
+
+This was a more challenging part of the project mainly because of drawbacks
+with the particular network monitoring tool I chose to use, |vnstat|. This
+program is similarly available in the Ubuntu repositories. While it's a great
+program to use on the command line for getting a quick idea of what's going on
+with the network, it was more difficult to script against without mucking with
+its database.
+
+Ultimately, I had the program list out the available |eth*| interfaces, then I
+measure the bandwidth usage on each interface for 5 seconds. Since |vnstat|
+only outputs separate send and receive measurements, I had to do some manual
+adjustments to add these two numbers together with correct units in order to
+get a picture of total bandwidth usage.
+
+\subsection{Sample output}
+
+\begin{lstlisting}
+Disk usage on /: 60%
+
+Failed login attempts by user:
+------------------------------
+8 root
+7 jared
+
+Analyzing bandwidth usage by interface:
+---------------------------------------
+
+Bandwidth used over 5 seconds on interface eth0...
+24.00 kbits/s
+
+Bandwidth used over 5 seconds on interface eth1...
+20130.00 kbits/s
+WARNING: bandwidth threshold 100 kbits/s exceeded!
+\end{lstlisting}
+
+\section{VM Networking}
+
+The script shown in Listing \ref{code:q3} is a pretty straightforward
+implementation of the problem statement in the assignment document. A
+parameter valued 1 through 4 is provided to the script to identify which part
+of the question the script should perform. The first two parts simply run
+|iperf3| for 20 seconds, whereas the second pair of parts run |iperf3| while
+simultaneously running |UDPEchoClient| at varying rates.
+
+Program output for parts 1 through 4 can be found in Listing \ref{log:q3p1}
+through Listing \ref{log:q3p4server}.
+
+\subsection{Discussion}
+
+The results of the first two parts (UDP and TCP |iperf3| executions) can
+largely be seen as controls for the experiments I performed in parts 3 and 4.
+The UDP execution saw a packet drop rate of roughly 0.25 percent, while the
+TCP execution window size had a mode of 130 KBytes.
+
+In parts 3 and 4, I varied the interval delay by values $10^{-i}$, where $i
+\in \{1,2,3,4\}$. Most of the results in part 3 were unsurprising: in order of
+decreasing delay time, I saw packet losses of 1.6, 0.2, 1.2, and 2.4 percent.
+Most of these seemed to make sense, except for the 0.2 percent result
+attributed to the delay time of 0.1 s. Jitter was another interesting
+variable; in order of decreasing delay times I saw 0.099, 0.051, 0.456, and
+0.114 ms jitter. Again, the 0.1 s delay time seemed to outperform the slower
+delay time of 1 s.
+
+The results of part 4 were similarly difficult to predict. Some delay values
+resulted in large window sizes, while others led to smaller ones. There did
+not seem to be a strong correlation in any case.
+
+\section{Code}
+
+\lstinputlisting[language=bash,caption=hw2-Q2.sh,frame=single,label=code:q2]{hw2-Q2.sh}
+
+\lstinputlisting[language=bash,caption=monitor.conf,frame=single,label=code:conf]{monitor.conf}
+
+\lstinputlisting[language=bash,caption=hw2-Q3.sh,frame=single,label=code:q3]{hw2-Q3.sh}
+
+\lstinputlisting[caption=q3p1.log,frame=single,label=log:q3p1]{logs/q3p1.log}
+\lstinputlisting[caption=q3p1-server.log,frame=single,label=log:q3p1server]{logs/q3p1-server.log}
+\lstinputlisting[caption=q3p2.log,frame=single,label=log:q3p2]{logs/q3p2.log}
+\lstinputlisting[caption=q3p2-server.log,frame=single,label=log:q3p2server]{logs/q3p2-server.log}
+\lstinputlisting[caption=q3p3.log,frame=single,label=log:q3p3]{logs/q3p3.log}
+\lstinputlisting[caption=q3p3-server.log,frame=single,label=log:q3p3server]{logs/q3p3-server.log}
+\lstinputlisting[caption=q3p4.log,frame=single,label=log:q3p4]{logs/q3p4.log}
+\lstinputlisting[caption=q3p4-server.log,frame=single,label=log:q3p4server]{logs/q3p4-server.log}
+
+\end{document}
