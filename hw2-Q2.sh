@@ -8,8 +8,8 @@ usage=${root[0]}
 total=${root[1]}
 echo "Disk usage on /: $usage%"
 
-if [[ $usage -gt $threshold ]]; then
-  echo "WARNING: disk usage threshold $threshold exceeded!"
+if [[ $usage -gt $disk_max ]]; then
+  echo "WARNING: disk usage threshold $disk_max exceeded!"
   for user in /home/*; do
     du -s $user | awk -v total=$total '{ printf("%.1f%% %s\n", 100*$1/total, $2) }'
   done
