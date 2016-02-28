@@ -1,0 +1,124 @@
+Connecting to host 192.168.56.104, port 5005
+[  4] local 192.168.56.105 port 42904 connected to 192.168.56.104 port 5005
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  2.21 MBytes  18.5 Mbits/sec    0    103 KBytes       
+[  4]   1.00-2.00   sec  2.38 MBytes  19.9 Mbits/sec    0    132 KBytes       
+[  4]   2.00-3.00   sec  2.38 MBytes  19.9 Mbits/sec    0    132 KBytes       
+[  4]   3.00-4.00   sec  2.38 MBytes  19.9 Mbits/sec    0    132 KBytes       
+[  4]   4.00-5.00   sec  2.38 MBytes  19.9 Mbits/sec    0    132 KBytes       
+[  4]   5.00-6.00   sec  2.38 MBytes  19.9 Mbits/sec    0    132 KBytes       
+[  4]   6.00-7.00   sec  2.38 MBytes  19.9 Mbits/sec    0    132 KBytes       
+[  4]   7.00-8.00   sec  2.50 MBytes  21.0 Mbits/sec    0    132 KBytes       
+[  4]   8.00-9.00   sec  2.38 MBytes  19.9 Mbits/sec    0    132 KBytes       
+[  4]   9.00-10.00  sec  2.38 MBytes  19.9 Mbits/sec    0    132 KBytes       
+[  4]  10.00-11.00  sec  2.38 MBytes  19.9 Mbits/sec    0    132 KBytes       
+[  4]  11.00-12.00  sec  2.38 MBytes  19.9 Mbits/sec    0    132 KBytes       
+[  4]  12.00-13.00  sec  2.38 MBytes  20.0 Mbits/sec    0    132 KBytes       
+[  4]  13.00-14.00  sec  2.38 MBytes  19.9 Mbits/sec    0    132 KBytes       
+[  4]  14.00-15.00  sec  2.38 MBytes  20.0 Mbits/sec    0    132 KBytes       
+[  4]  15.00-16.00  sec  2.38 MBytes  19.9 Mbits/sec    0    132 KBytes       
+[  4]  16.00-17.00  sec  2.38 MBytes  19.9 Mbits/sec    0    132 KBytes       
+[  4]  17.00-18.00  sec  2.38 MBytes  20.0 Mbits/sec    0    132 KBytes       
+[  4]  18.00-19.00  sec  2.38 MBytes  19.9 Mbits/sec    0    132 KBytes       
+[  4]  19.00-20.00  sec  2.38 MBytes  19.9 Mbits/sec    0    132 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-20.00  sec  47.5 MBytes  19.9 Mbits/sec    0             sender
+[  4]   0.00-20.00  sec  47.5 MBytes  19.9 Mbits/sec                  receiver
+
+iperf Done.
+
+Avg Ping: 605 microseconds Loss: 0 Percent
+Connecting to host 192.168.56.104, port 5005
+[  4] local 192.168.56.105 port 42906 connected to 192.168.56.104 port 5005
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  2.21 MBytes  18.5 Mbits/sec    0    112 KBytes       
+[  4]   1.00-2.00   sec  2.38 MBytes  20.0 Mbits/sec    0    173 KBytes       
+[  4]   2.00-3.00   sec  2.38 MBytes  19.9 Mbits/sec    0    247 KBytes       
+[  4]   3.00-4.00   sec  2.38 MBytes  19.9 Mbits/sec    0    257 KBytes       
+[  4]   4.00-5.00   sec  2.38 MBytes  19.9 Mbits/sec    0    257 KBytes       
+[  4]   5.00-6.00   sec  2.38 MBytes  19.9 Mbits/sec    0    257 KBytes       
+[  4]   6.00-7.00   sec  2.38 MBytes  19.9 Mbits/sec    0    257 KBytes       
+[  4]   7.00-8.00   sec  2.50 MBytes  20.9 Mbits/sec    0    257 KBytes       
+[  4]   8.00-9.00   sec  2.38 MBytes  19.9 Mbits/sec    0    257 KBytes       
+[  4]   9.00-10.00  sec  2.38 MBytes  19.9 Mbits/sec    0    257 KBytes       
+[  4]  10.00-11.00  sec  2.38 MBytes  19.9 Mbits/sec    0    257 KBytes       
+[  4]  11.00-12.00  sec  2.38 MBytes  20.0 Mbits/sec    0    257 KBytes       
+[  4]  12.00-13.00  sec  2.38 MBytes  19.9 Mbits/sec    0    257 KBytes       
+[  4]  13.00-14.00  sec  2.38 MBytes  19.9 Mbits/sec    0    257 KBytes       
+[  4]  14.00-15.00  sec  2.38 MBytes  19.9 Mbits/sec    0    257 KBytes       
+[  4]  15.00-16.00  sec  2.38 MBytes  19.9 Mbits/sec    0    257 KBytes       
+[  4]  16.00-17.00  sec  2.38 MBytes  20.0 Mbits/sec    0    257 KBytes       
+[  4]  17.00-18.00  sec  2.38 MBytes  19.9 Mbits/sec    0    257 KBytes       
+[  4]  18.00-19.00  sec  2.38 MBytes  19.9 Mbits/sec    0    257 KBytes       
+[  4]  19.00-20.00  sec  2.38 MBytes  19.9 Mbits/sec    0    257 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-20.00  sec  47.5 MBytes  19.9 Mbits/sec    0             sender
+[  4]   0.00-20.00  sec  47.5 MBytes  19.9 Mbits/sec                  receiver
+
+iperf Done.
+
+Avg Ping: 599 microseconds Loss: 0 Percent
+Connecting to host 192.168.56.104, port 5005
+[  4] local 192.168.56.105 port 42908 connected to 192.168.56.104 port 5005
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  2.21 MBytes  18.5 Mbits/sec    0    140 KBytes       
+[  4]   1.00-2.00   sec  2.38 MBytes  20.0 Mbits/sec    0    140 KBytes       
+[  4]   2.00-3.00   sec  2.38 MBytes  19.9 Mbits/sec    0    140 KBytes       
+[  4]   3.00-4.00   sec  2.38 MBytes  19.9 Mbits/sec    0    140 KBytes       
+[  4]   4.00-5.00   sec  2.38 MBytes  20.0 Mbits/sec    0    140 KBytes       
+[  4]   5.00-6.00   sec  2.38 MBytes  19.8 Mbits/sec    0    140 KBytes       
+[  4]   6.00-7.00   sec  2.38 MBytes  19.9 Mbits/sec    0    280 KBytes       
+[  4]   7.00-8.01   sec  2.50 MBytes  20.9 Mbits/sec    0    280 KBytes       
+[  4]   8.01-9.00   sec  2.38 MBytes  20.0 Mbits/sec    0    280 KBytes       
+[  4]   9.00-10.00  sec  2.38 MBytes  20.0 Mbits/sec    0    280 KBytes       
+[  4]  10.00-11.00  sec  2.38 MBytes  19.9 Mbits/sec    0    280 KBytes       
+[  4]  11.00-12.00  sec  2.38 MBytes  20.0 Mbits/sec    0    280 KBytes       
+[  4]  12.00-13.00  sec  2.38 MBytes  19.9 Mbits/sec    0    280 KBytes       
+[  4]  13.00-14.01  sec  2.38 MBytes  19.8 Mbits/sec    0    280 KBytes       
+[  4]  14.01-15.00  sec  2.38 MBytes  20.0 Mbits/sec    0    280 KBytes       
+[  4]  15.00-16.00  sec  2.38 MBytes  19.9 Mbits/sec    0    280 KBytes       
+[  4]  16.00-17.00  sec  2.38 MBytes  20.0 Mbits/sec    0    280 KBytes       
+[  4]  17.00-18.00  sec  2.38 MBytes  19.9 Mbits/sec    0    280 KBytes       
+[  4]  18.00-19.00  sec  2.38 MBytes  19.9 Mbits/sec    0    280 KBytes       
+[  4]  19.00-20.00  sec  2.38 MBytes  20.0 Mbits/sec    0    280 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-20.00  sec  47.5 MBytes  19.9 Mbits/sec    0             sender
+[  4]   0.00-20.00  sec  47.5 MBytes  19.9 Mbits/sec                  receiver
+
+iperf Done.
+
+Avg Ping: 709 microseconds Loss: 0 Percent
+Connecting to host 192.168.56.104, port 5005
+[  4] local 192.168.56.105 port 42910 connected to 192.168.56.104 port 5005
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  2.21 MBytes  18.5 Mbits/sec    0    208 KBytes       
+[  4]   1.00-2.00   sec  2.38 MBytes  19.9 Mbits/sec    0    266 KBytes       
+[  4]   2.00-3.00   sec  2.38 MBytes  20.0 Mbits/sec    0    266 KBytes       
+[  4]   3.00-4.00   sec  2.38 MBytes  19.9 Mbits/sec    0    266 KBytes       
+[  4]   4.00-5.00   sec  2.38 MBytes  19.9 Mbits/sec    0    266 KBytes       
+[  4]   5.00-6.01   sec  2.38 MBytes  19.8 Mbits/sec    0    266 KBytes       
+[  4]   6.01-7.00   sec  2.38 MBytes  19.9 Mbits/sec    0    266 KBytes       
+[  4]   7.00-8.00   sec  2.50 MBytes  21.1 Mbits/sec    0    266 KBytes       
+[  4]   8.00-9.00   sec  2.38 MBytes  19.9 Mbits/sec    0    266 KBytes       
+[  4]   9.00-10.00  sec  2.38 MBytes  20.0 Mbits/sec    0    266 KBytes       
+[  4]  10.00-11.00  sec  2.38 MBytes  20.0 Mbits/sec    0    266 KBytes       
+[  4]  11.00-12.00  sec  2.38 MBytes  19.9 Mbits/sec    0    266 KBytes       
+[  4]  12.00-13.00  sec  2.38 MBytes  19.9 Mbits/sec    0    266 KBytes       
+[  4]  13.00-14.00  sec  2.38 MBytes  19.9 Mbits/sec    0    266 KBytes       
+[  4]  14.00-15.00  sec  2.38 MBytes  19.9 Mbits/sec    0    266 KBytes       
+[  4]  15.00-16.00  sec  2.38 MBytes  19.9 Mbits/sec    0    266 KBytes       
+[  4]  16.00-17.00  sec  2.38 MBytes  19.9 Mbits/sec    0    266 KBytes       
+[  4]  17.00-18.00  sec  2.38 MBytes  19.9 Mbits/sec    0    266 KBytes       
+[  4]  18.00-19.00  sec  2.38 MBytes  19.9 Mbits/sec    0    266 KBytes       
+[  4]  19.00-20.00  sec  2.38 MBytes  19.9 Mbits/sec    0    266 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-20.00  sec  47.5 MBytes  19.9 Mbits/sec    0             sender
+[  4]   0.00-20.00  sec  47.5 MBytes  19.9 Mbits/sec                  receiver
+
+iperf Done.
+
+Avg Ping: 592 microseconds Loss: 0 Percent

@@ -1,0 +1,124 @@
+Connecting to host 192.168.56.104, port 5005
+[  4] local 192.168.56.105 port 58868 connected to 192.168.56.104 port 5005
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec  2.16 MBytes  18.1 Mbits/sec  276  
+[  4]   1.00-2.00   sec  2.46 MBytes  20.6 Mbits/sec  315  
+[  4]   2.00-3.00   sec  2.33 MBytes  19.5 Mbits/sec  298  
+[  4]   3.00-4.00   sec  2.38 MBytes  20.0 Mbits/sec  304  
+[  4]   4.00-5.00   sec  2.39 MBytes  20.0 Mbits/sec  306  
+[  4]   5.00-6.01   sec  2.38 MBytes  19.9 Mbits/sec  305  
+[  4]   6.01-7.00   sec  2.38 MBytes  20.1 Mbits/sec  305  
+[  4]   7.00-8.00   sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]   8.00-9.00   sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]   9.00-10.00  sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]  10.00-11.00  sec  2.38 MBytes  19.9 Mbits/sec  305  
+[  4]  11.00-12.00  sec  2.39 MBytes  20.1 Mbits/sec  306  
+[  4]  12.00-13.00  sec  2.38 MBytes  19.9 Mbits/sec  304  
+[  4]  13.00-14.00  sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]  14.00-15.01  sec  2.40 MBytes  20.0 Mbits/sec  307  
+[  4]  15.01-16.01  sec  2.38 MBytes  19.9 Mbits/sec  304  
+[  4]  16.01-17.00  sec  2.38 MBytes  20.1 Mbits/sec  305  
+[  4]  17.00-18.00  sec  2.39 MBytes  20.1 Mbits/sec  306  
+[  4]  18.00-19.00  sec  2.38 MBytes  19.9 Mbits/sec  305  
+[  4]  19.00-20.00  sec  2.38 MBytes  20.0 Mbits/sec  304  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-20.00  sec  47.5 MBytes  19.9 Mbits/sec  0.099 ms  98/6075 (1.6%)  
+[  4] Sent 6075 datagrams
+
+iperf Done.
+
+Avg Ping: 562 microseconds Loss: 0 Percent
+Connecting to host 192.168.56.104, port 5005
+[  4] local 192.168.56.105 port 57397 connected to 192.168.56.104 port 5005
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec  2.16 MBytes  18.1 Mbits/sec  276  
+[  4]   1.00-2.00   sec  2.40 MBytes  20.1 Mbits/sec  307  
+[  4]   2.00-3.00   sec  2.39 MBytes  20.1 Mbits/sec  306  
+[  4]   3.00-4.00   sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]   4.00-5.00   sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]   5.00-6.00   sec  2.38 MBytes  19.9 Mbits/sec  304  
+[  4]   6.00-7.00   sec  2.38 MBytes  20.1 Mbits/sec  305  
+[  4]   7.00-8.00   sec  2.39 MBytes  20.0 Mbits/sec  306  
+[  4]   8.00-9.01   sec  2.38 MBytes  19.9 Mbits/sec  305  
+[  4]   9.01-10.00  sec  2.38 MBytes  20.1 Mbits/sec  305  
+[  4]  10.00-11.00  sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]  11.00-12.00  sec  2.40 MBytes  20.1 Mbits/sec  307  
+[  4]  12.00-13.01  sec  2.38 MBytes  19.8 Mbits/sec  304  
+[  4]  13.01-14.00  sec  2.38 MBytes  20.1 Mbits/sec  305  
+[  4]  14.00-15.00  sec  2.38 MBytes  19.9 Mbits/sec  305  
+[  4]  15.00-16.00  sec  2.38 MBytes  20.1 Mbits/sec  305  
+[  4]  16.00-17.01  sec  2.39 MBytes  19.9 Mbits/sec  306  
+[  4]  17.01-18.00  sec  2.38 MBytes  20.1 Mbits/sec  305  
+[  4]  18.00-19.00  sec  2.38 MBytes  19.9 Mbits/sec  304  
+[  4]  19.00-20.00  sec  2.40 MBytes  20.1 Mbits/sec  307  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-20.00  sec  47.5 MBytes  19.9 Mbits/sec  0.051 ms  12/6077 (0.2%)  
+[  4] Sent 6077 datagrams
+
+iperf Done.
+
+Avg Ping: 615 microseconds Loss: 0 Percent
+Connecting to host 192.168.56.104, port 5005
+[  4] local 192.168.56.105 port 51071 connected to 192.168.56.104 port 5005
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec  2.16 MBytes  18.1 Mbits/sec  277  
+[  4]   1.00-2.00   sec  2.39 MBytes  20.1 Mbits/sec  306  
+[  4]   2.00-3.00   sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]   3.00-4.00   sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]   4.00-5.00   sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]   5.00-6.00   sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]   6.00-7.00   sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]   7.00-8.00   sec  2.39 MBytes  20.1 Mbits/sec  306  
+[  4]   8.00-9.00   sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]   9.00-10.00  sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]  10.00-11.00  sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]  11.00-12.00  sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]  12.00-13.00  sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]  13.00-14.00  sec  2.39 MBytes  20.0 Mbits/sec  306  
+[  4]  14.00-15.00  sec  2.40 MBytes  20.2 Mbits/sec  307  
+[  4]  15.00-16.00  sec  2.37 MBytes  19.8 Mbits/sec  303  
+[  4]  16.00-17.00  sec  2.40 MBytes  20.1 Mbits/sec  307  
+[  4]  17.00-18.00  sec  2.37 MBytes  19.9 Mbits/sec  303  
+[  4]  18.00-19.00  sec  2.39 MBytes  20.1 Mbits/sec  306  
+[  4]  19.00-20.00  sec  2.38 MBytes  20.0 Mbits/sec  305  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-20.00  sec  47.5 MBytes  19.9 Mbits/sec  0.456 ms  74/6076 (1.2%)  
+[  4] Sent 6076 datagrams
+
+iperf Done.
+
+Avg Ping: 614 microseconds Loss: 0 Percent
+Connecting to host 192.168.56.104, port 5005
+[  4] local 192.168.56.105 port 48663 connected to 192.168.56.104 port 5005
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec  2.16 MBytes  18.1 Mbits/sec  276  
+[  4]   1.00-2.00   sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]   2.00-3.00   sec  2.39 MBytes  20.0 Mbits/sec  306  
+[  4]   3.00-4.00   sec  2.39 MBytes  20.1 Mbits/sec  306  
+[  4]   4.00-5.00   sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]   5.00-6.00   sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]   6.00-7.00   sec  2.39 MBytes  20.1 Mbits/sec  306  
+[  4]   7.00-8.01   sec  2.38 MBytes  19.9 Mbits/sec  305  
+[  4]   8.01-9.00   sec  2.38 MBytes  20.1 Mbits/sec  305  
+[  4]   9.00-10.00  sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]  10.00-11.00  sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]  11.00-12.00  sec  2.39 MBytes  20.0 Mbits/sec  306  
+[  4]  12.00-13.00  sec  2.39 MBytes  20.0 Mbits/sec  306  
+[  4]  13.00-14.00  sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]  14.00-15.00  sec  2.38 MBytes  19.9 Mbits/sec  304  
+[  4]  15.00-16.00  sec  2.38 MBytes  20.0 Mbits/sec  304  
+[  4]  16.00-17.00  sec  2.39 MBytes  20.1 Mbits/sec  306  
+[  4]  17.00-18.00  sec  2.38 MBytes  20.0 Mbits/sec  305  
+[  4]  18.00-19.00  sec  2.38 MBytes  19.9 Mbits/sec  305  
+[  4]  19.00-20.00  sec  2.39 MBytes  20.1 Mbits/sec  306  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-20.00  sec  47.5 MBytes  19.9 Mbits/sec  0.114 ms  143/6076 (2.4%)  
+[  4] Sent 6076 datagrams
+
+iperf Done.
+
+Avg Ping: 737 microseconds Loss: 0 Percent
